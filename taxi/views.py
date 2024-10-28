@@ -13,7 +13,6 @@ from .forms import (
     DriverLicenseUpdateForm,
     CarForm,
     AddCarForm,
-    DriverUpdateForm
 )
 
 
@@ -129,9 +128,3 @@ class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
 class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = get_user_model()
     success_url = reverse_lazy("taxi:driver-list")
-
-
-class DriverLicenseUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = get_user_model()
-    form_class = DriverLicenseUpdateForm
-    template_name = "taxi/license_update_form.html"
