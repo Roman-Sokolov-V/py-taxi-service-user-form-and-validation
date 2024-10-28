@@ -6,7 +6,7 @@ from .models import Driver, Car
 
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
-        model = get_user_model()
+        model = Driver
         fields = ("username", "license_number", "first_name", "last_name",)
 
 
@@ -21,11 +21,10 @@ class CarForm(forms.ModelForm):
         queryset=Driver.objects.all(),
         widget=forms.CheckboxSelectMultiple()
     )
-    fields = ("model", "manufacturer", "drivers")
 
     class Meta:
         model = Car
-        fields = "__all__"
+        fields = ("model", "manufacturer", "drivers")
 
 
 class AddCarForm(forms.ModelForm):

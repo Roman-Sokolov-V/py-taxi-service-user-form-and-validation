@@ -111,12 +111,12 @@ class DriverListView(LoginRequiredMixin, generic.ListView):
 
 
 class DriverDetailView(LoginRequiredMixin, generic.DetailView):
-    model = get_user_model()
+    model = Driver
     queryset = Driver.objects.all().prefetch_related("cars__manufacturer")
 
 
 class DriverCreateView(LoginRequiredMixin, generic.CreateView):
-    model = get_user_model()
+    model = Driver
     form_class = DriverCreationForm
 
 
