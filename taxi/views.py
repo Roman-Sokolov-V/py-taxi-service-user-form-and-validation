@@ -106,7 +106,7 @@ class CarDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 
 class DriverListView(LoginRequiredMixin, generic.ListView):
-    model = get_user_model()
+    model = Driver
     paginate_by = 5
 
 
@@ -121,10 +121,10 @@ class DriverCreateView(LoginRequiredMixin, generic.CreateView):
 
 
 class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
-    model = get_user_model()
+    model = Driver
     form_class = DriverLicenseUpdateForm
 
 
 class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):
-    model = get_user_model()
+    model = Driver
     success_url = reverse_lazy("taxi:driver-list")
