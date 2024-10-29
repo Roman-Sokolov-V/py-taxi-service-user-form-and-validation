@@ -7,8 +7,8 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 
-from .models import Driver, Car, Manufacturer
-from .forms import (
+from taxi.models import Driver, Car, Manufacturer
+from taxi.forms import (
     DriverCreationForm,
     DriverLicenseUpdateForm,
     CarForm,
